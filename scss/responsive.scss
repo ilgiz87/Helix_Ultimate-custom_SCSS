@@ -1,0 +1,185 @@
+/**
+ * ПРОВЕРИТЬ после GPT
+*/
+
+  
+  // Группировка связанных медиа-запросов
+  @media (max-width: 1199px) {
+    #sp-header {
+      &.full-header {
+        padding: 0 15px;
+      }
+      
+      &.header-with-social #sp-menu .social-wrap {
+        padding-left: 0;
+      }
+    }
+  
+    .sp-megamenu-parent > li > a,
+    .sp-megamenu-parent > li > span {
+      padding: 0 10px;
+    }
+  }
+  
+  @media (min-width: 992px) {
+    #sp-header.header-with-modal-menu #offcanvas-toggler.offcanvas {
+      display: none;
+    }
+  }
+  
+  // Объединение стилей для мобильных устройств
+  @media (max-width: 991px) {
+    #sp-header {
+      .logo {
+        height: var(--header_height);
+      }
+  
+      &.header-with-modal-menu {
+        #offcanvas-toggler {
+          display: flex;
+          height: $header_height_sm;
+          line-height: $header_height_sm;
+        }
+        
+        #modal-menu-toggler,
+        &.center-layout .sp-contact-info,
+        &.classic-layout .sp-contact-info {
+          display: none;
+        }
+      }
+  
+      &.lg-header {
+        #offcanvas-toggler.mega {
+          display: none;
+        }
+        .offcanvas-toggler-left.offcanvas {
+          display: flex;
+        }
+      }
+    }
+  
+    #sp-header-topbar {
+      margin: 10px 0;
+      
+      .container-inner {
+        padding-bottom: 10px;
+        > .row {
+          min-height: $header_height_sm;
+        }
+      }
+    }
+  
+    #modal-menu {
+      top: $header_height_sm;
+    }
+  
+    .sp-megamenu-parent > li > a,
+    .sp-megamenu-parent > li > span {
+      line-height: var(--header_height);
+    }
+  
+    // Общие стили для логотипа и границ
+    #sp-logo {
+      &.has-border {
+        padding-right: 15px;
+        > .sp-column {
+          border-right: none;
+          padding-right: 0;
+        }
+      }
+    }
+  
+    #sp-menu {
+      .social-wrap {
+        padding-left: 15px;
+        &:after {
+          display: none;
+        }
+      }
+    }
+  }
+  
+  @media (max-width: 767px) {
+    #sp-menu .social-wrap {
+      padding-left: 10px;
+    }
+  
+    #sp-header .menu-wrap {
+      display: none;
+    }
+  
+    .hu-media-modal .modal-content {
+      height: 85vh;
+    }
+  
+    .article.related-article-large.d-flex,
+    .article-list.grid {
+      display: block !important;
+      --columns: 1;
+      margin-bottom: 15px;
+    }
+  }
+  
+  @media (max-width: 575px) {
+    #sp-header {
+      .sp-module {
+        margin-left: 10px;
+        
+        .sp-sign-in .text {
+          display: none;
+        }
+      }
+  
+      &.lg-header {
+        .top-part {
+          border-bottom: none;
+        }
+        
+        #sp-contact {
+          order: 1;
+        }
+        
+        #sp-logo {
+          order: 3;
+        }
+        
+        #sp-social {
+          order: 2;
+          .sp-column {
+            justify-content: center;
+          }
+          .social-icons {
+            margin: 0;
+            > li:not(:last-child) {
+              margin-right: 10px;
+            }
+          }
+        }
+      }
+    }
+  
+    .header-has-modules {
+      .container-inner > .row {
+        flex-wrap: wrap;
+      }
+      
+      #offcanvas-toggler {
+        height: auto;
+        line-height: 1.2;
+      }
+    }
+  }
+  
+  // Общие стили для модальных окон
+  .hu-media-modal .modal-content {
+    height: 80vh;
+  }
+  
+  .modal-dialog.jviewport-width80 {
+    width: auto;
+  }
+  
+  // Удаление дублирующихся !important
+  #offcanvas-toggler.mega {
+    display: flex;
+  }

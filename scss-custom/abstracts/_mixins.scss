@@ -1,0 +1,17 @@
+@mixin icon-mask($imageUrl) {
+    display: block;
+    mask: {
+      image: $imageUrl;
+      repeat: no-repeat;
+      size: contain;
+      position: center;
+    }
+  }
+  
+  // Миксин для вертикального центрирования
+  @mixin vertical-center {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+  }
