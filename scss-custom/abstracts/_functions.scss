@@ -1,53 +1,63 @@
 // Удаление единиц измерения
 @function strip-units($number) {
-    @if type-of($number) == 'number' and not unitless($number) {
-      @return $number / 1;
-    }
-    @return $number;
+  @if type-of($number)=='number' and not unitless($number) {
+    @return $number / 1;
   }
-  
-  // Округление
-  @function rounding($value, $exp: 100) {
-    @return round($value * $exp) / $exp;
+
+  @return $number;
+}
+
+// Округление
+@function rounding($value, $exp: 100) {
+  @return round($value * $exp) / $exp;
+}
+
+// Преобразование PX в REM
+@function toRem($pixel) {
+  @if unitless($pixel) {
+    @return #{rounding($pixel / $BASE_FONT_SIZE, 1000)}rem;
   }
-  
-  // Преобразование PX в REM
-  @function toRem($pixel) {
-    @if unitless($pixel) {
-      @return #{rounding($pixel / $BASE_FONT_SIZE, 1000)}rem;
-    } @else {
-      @error 'Не используйте единицы измерения при работе с функцией toRem()! Передавайте аргументом только числа.';
-    }
+
+  @else {
+    @error 'Не используйте единицы измерения при работе с функцией toRem()! Передавайте аргументом только числа.';
   }
-  
-  // Clamp с динамическим расчетом
-  @function clamp1($min, $max) {
-    @if $min == $max {
-      @return toRem($max);
-    }
-  
-    $slope: ($max - $min) / ($VIEWPORT-MAX - $VIEWPORT-MIN);
-    $yAxisIntersection: (-$VIEWPORT-MIN * $slope + $min) / $BASE_FONT_SIZE;
-  
-    $clampMin: toRem($min);
-    $clampMax: toRem($max);
-    $clampVal: #{rounding(strip-units($yAxisIntersection), 1000)}rem + #{rounding($slope * 100, 100)}vw;
-  
-    @return clamp(#{$clampMin}, #{$clampVal}, #{$clampMax});
+}
+
+// Clamp с динамическим расчетом
+@function clamp1($min, $max) {
+  @if $min ==$max {
+    @return toRem($max);
   }
-  
-  // Упрощенный Clamp (процент от окна)
-  @function clamp2($min, $max) {
-    @if $min == $max {
-      @return toRem($max);
-    }
-    
-    $clampMin: toRem($min);
-    $clampVal: rounding(
-      (strip-units($max) / strip-units($VIEWPORT-MAX)) * 100, 
-      1000
-    );
-    $clampMax: toRem($max);
-  
-    @return clamp(#{$clampMin}, #{$clampVal}vw, #{$clampMax});
+
+  $slope: (
+    $max - $min) / ($VIEWPORT-MAX - $VIEWPORT-MIN
+  );
+$yAxisIntersection: (
+  -$VIEWPORT-MIN * $slope + $min) / $BASE_FONT_SIZE;
+
+$clampMin: toRem($min
+);
+$clampMax: toRem($max);
+$clampVal: #{rounding(strip-units($yAxisIntersection), 1000)}rem + #{rounding($slope * 100, 100)}vw;
+
+@return clamp(#{$clampMin}, #{$clampVal}, #{$clampMax});
+}
+
+// Упрощенный Clamp (процент от окна)
+@function clamp2($min, $max) {
+  @if $min ==$max {
+    @return toRem($max);
   }
+
+  $clampMin: toRem($min);
+  $clampVal: rounding((strip-units($max) / strip-units($VIEWPORT-MAX)) * 100,
+      1000);
+  $clampMax: toRem($max);
+
+  @return clamp(#{$clampMin}, #{$clampVal}vw, #{$clampMax});
+}
+
+// Преобразования цвета в RGB-строку формата "R,G,B"
+@function hex-to-rgb-string($color) {
+  @return "#{red($color)},#{green($color)},#{blue($color)}";
+}

@@ -1,11 +1,10 @@
-
-
 .sp-preloader {
   background-color: var(--bs-body-bg);
   color: var(--bs-body-color);
 
-  > div {
+  >div {
     background: var(--bs-link-color);
+
     &:after {
       background: var(--bs-body-bg);
     }
@@ -15,6 +14,7 @@
 #sp-top-bar {
   background: $topbar_bg_color;
   color: $topbar_text_color;
+
   a {
     color: $topbar_text_color;
   }
@@ -25,19 +25,23 @@
 }
 
 #sp-menu ul.social-icons {
+
   a:hover,
   a:focus {
     color: var(--bs-link-color);
   }
 }
 
-.tags > li {
+.tags>li {
   display: inline-block;
+
   a {
     color: var(--bs-link-color);
+
     @if $link_color {
       background: fade-out($link_color, 0.9);
     }
+
     &:hover {
       background: var(--bs-link-hover-color);
     }
@@ -46,13 +50,14 @@
 
 .article-social-share .social-share-icon ul li a {
   color: var(--bs-body-color);
+
   &:hover,
   &:focus {
     background: var(--bs-link-color);
   }
 }
 
-.pager > li a {
+.pager>li a {
   border: 1px solid #ededed;
   color: var(--bs-body-color);
 }
@@ -62,15 +67,17 @@
 }
 
 .sp-megamenu-parent {
-  > li {
-    > a {
+  >li {
+    >a {
       color: $menu_text_color;
     }
-    &:hover > a {
+
+    &:hover>a {
       color: $menu_text_hover_color;
     }
-    &.active > a,
-    &.active:hover > a {
+
+    &.active>a,
+    &.active:hover>a {
       color: $menu_text_active_color;
     }
   }
@@ -79,29 +86,34 @@
     .sp-dropdown-inner {
       background: $menu_dropdown_bg_color;
     }
+
     li.sp-menu-item {
-      > a {
+      >a {
         color: $menu_dropdown_text_color;
+
         &:hover {
           color: $menu_dropdown_text_hover_color;
         }
       }
-      &.active > a {
+
+      &.active>a {
         color: $menu_dropdown_text_active_color;
       }
     }
   }
 
-  .sp-mega-group > li > a {
+  .sp-mega-group>li>a {
     color: $menu_dropdown_text_color;
   }
 }
 
 #offcanvas-toggler {
-  > .fa,
-  > .fas,
-  > .far {
+
+  >.fa,
+  >.fas,
+  >.far {
     color: $menu_text_color;
+
     &:hover,
     &:focus,
     &:active {
@@ -117,6 +129,7 @@
   .offcanvas-inner {
     a {
       color: $offcanvas_menu_items_and_items_color;
+
       &:hover,
       &:focus,
       &:active {
@@ -124,10 +137,12 @@
       }
     }
 
-    ul.menu > li {
+    ul.menu>li {
+
       a,
       span {
         color: $offcanvas_menu_items_and_items_color;
+
         &:hover,
         &:focus {
           color: $menu_dropdown_text_hover_color;
@@ -135,17 +150,18 @@
       }
 
       &.menu-parent {
-        > a,
-        > .menu-separator > .menu-toggler,
+
+        >a,
+        >.menu-separator>.menu-toggler,
         .menu-toggler {
-          @if $offcanvas_menu_items_and_items_color != null {
+          @if $offcanvas_menu_items_and_items_color !=null {
             color: fade-out($offcanvas_menu_items_and_items_color, 0.5);
           }
         }
       }
 
       li a {
-        @if $offcanvas_menu_items_and_items_color != null {
+        @if $offcanvas_menu_items_and_items_color !=null {
           color: fade-out($offcanvas_menu_items_and_items_color, 0.2);
         }
       }
@@ -157,13 +173,14 @@
 .sppb-btn-primary {
   border-color: var(--bs-link-color);
   background-color: var(--bs-link-color);
+
   &:hover {
     border-color: var(--bs-link-hover-color);
     background-color: var(--bs-link-hover-color);
   }
 }
 
-ul.social-icons > li a:hover {
+ul.social-icons>li a:hover {
   color: var(--bs-link-color);
 }
 
@@ -176,9 +193,11 @@ ul.social-icons > li a:hover {
 }
 
 .sp-module {
-  ul > li > a,
-  .latestnews > div > a {
+
+  ul>li>a,
+  .latestnews>div>a {
     color: var(--bs-body-color);
+
     &:hover {
       color: var(--bs-link-color);
     }
@@ -197,8 +216,10 @@ ul.social-icons > li a:hover {
 #sp-bottom {
   background: $footer_bg_color;
   color: $footer_text_color;
+
   a {
     color: $footer_link_color;
+
     &:hover,
     &:active,
     &:focus {
@@ -207,7 +228,7 @@ ul.social-icons > li a:hover {
   }
 }
 
-#sp-bottom .sp-module-content .latestnews > li > a > span {
+#sp-bottom .sp-module-content .latestnews>li>a>span {
   color: $footer_text_color;
 }
 
@@ -216,23 +237,31 @@ ul.social-icons > li a:hover {
 }
 
 .pagination {
-  > li > a,
-  > li > span {
-    color: var(--bs-body-color);
-    &:hover,
-    &:focus {
-      color: var(--bs-body-color);
-    }
-  }
+  >li {
 
-  > .active > a,
-  > .active > span {
-    border-color: var(--bs-link-color);
-    background-color: var(--bs-link-color);
-    &:hover,
-    &:focus {
-      border-color: var(--bs-link-color);
-      background-color: var(--bs-link-color);
+    >a,
+    >span {
+      color: var(--bs-body-color);
+
+      &:hover,
+      &:focus {
+        color: var(--bs-body-color);
+      }
+    }
+
+    &.active {
+
+      >a,
+      >span {
+        border-color: var(--bs-link-color);
+        background-color: var(--bs-link-color);
+
+        &:hover,
+        &:focus {
+          border-color: var(--bs-link-color);
+          background-color: var(--bs-link-color);
+        }
+      }
     }
   }
 }

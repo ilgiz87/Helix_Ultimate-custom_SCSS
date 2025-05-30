@@ -1,0 +1,24 @@
+$BASE_FONT_SIZE: 16;
+$VIEWPORT-MIN: 360;
+$VIEWPORT-MAX: 1920;
+
+//Bootstrap 5 customize
+$gutterX: toRem(20);
+
+$spMainPadding: 100px 0;
+$spHeaderShadow: 0 0 4px 0 rgba(0, 0, 0, 0.1);
+
+
+:root {
+  --bs-gutter-x: #{$gutterX};
+
+  --bs-body-color: #{$text_color};
+  --bs-body-bg: #{$bg_color};
+  --bs-link-color: #{$link_color};
+  --bs-link-hover-color: #{$link_hover_color};
+  --bs-primary: #{$link_color};
+  --bs-primary-rgb: #{hex-to-rgb-string($link_color)};
+  
+  // Global CSS Variables
+  --header_height: #{$header_height};
+}
