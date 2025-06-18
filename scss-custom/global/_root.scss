@@ -1,0 +1,21 @@
+:root {
+    --bs-gutter-x: #{$gutterX};
+
+    --bs-body-color: #{$text_color};
+    --bs-body-bg: #{$bg_color};
+    --bs-link-color: #{$link_color};
+    --bs-link-hover-color: #{$link_hover_color};
+    --bs-primary: #{$link_color};
+    --bs-primary-rgb: #{hex2rgbString($link_color)};
+
+    // Global CSS Variables
+    --header_height: #{$header_height};
+
+    @media (max-width: 991px) {
+        --header_height: #{$header_height_sm};
+    }
+
+    @media (max-width: 575px) {
+        --header_height: #{$header_height_xs};
+    }
+}

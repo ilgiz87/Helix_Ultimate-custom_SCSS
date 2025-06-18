@@ -1,39 +1,20 @@
-//Bootstrap 5 customize
-$gutterX: toRem(20);
-
-:root {
-  --bs-gutter-x: #{$gutterX};
-  
-  --bs-body-color: #{$text_color};
-  --bs-body-bg: #{$bg_color};
-  --bs-link-color: #{$link_color};
-  --bs-link-hover-color: #{$link_hover_color};
-  --bs-primary: #{$link_color};
-
-  // Global CSS Variables
-  --header_height: #{$header_height};
-}
-
 .row {
   --bs-gutter-x: #{$gutterX};
 
   margin-right: calc(-1 * var(--bs-gutter-x));
   margin-left: calc(-1 * var(--bs-gutter-x));
 }
+
 .container {
   padding-right: var(--bs-gutter-x);
   padding-left: var(--bs-gutter-x);
 }
 
+p {
+  margin-bottom: 0;
 
-@media (max-width: 991px) {
-  :root {
-    --header_height: #{$header_height_sm};
+  &+& {
+    margin-top: toRem(16);
   }
 }
 
-@media (max-width: 575px) {
-  :root {
-    --header_height: #{$header_height_xs};
-  }
-}

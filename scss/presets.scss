@@ -1,17 +1,4 @@
 
-
-.sp-preloader {
-  background-color: var(--bs-body-bg);
-  color: var(--bs-body-color);
-
-  > div {
-    background: var(--bs-link-color);
-    &:after {
-      background: var(--bs-body-bg);
-    }
-  }
-}
-
 #sp-top-bar {
   background: $topbar_bg_color;
   color: $topbar_text_color;
